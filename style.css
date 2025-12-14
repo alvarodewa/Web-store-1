@@ -1,0 +1,73 @@
+:root {
+  --bg-primary: #0c0c0c;
+  --text-primary: #e0e0e0;
+  --accent: #424242;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.landing-page,
+.payment-page,
+.send-proof-page {
+  display: none;
+  text-align: center;
+}
+
+.landing-page {
+  display: block;
+}
+
+.profile-icon {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cta-button {
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 20px;
+}
+
+.payment-card {
+  padding: 20px;
+  border-radius: 15px;
+  background: #1e1e1e;
+}
+
+.copy-btn {
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
