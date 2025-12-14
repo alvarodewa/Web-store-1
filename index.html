@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web-Payment HTML</title>
+
+  <!-- Google Font & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background -->
+  <div id="particles-js"></div>
+  <div class="nebula-bg"></div>
+
+  <!-- Notifikasi -->
+  <div class="notif" id="notif"></div>
+
+  <!-- Header -->
+  <div class="header-controls">
+    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="dropdown-menu" id="dropdownMenu">
+      <button class="dropdown-item" id="backBtn" onclick="showLandingPage()" style="display:none">
+        <span class="material-symbols-outlined">arrow_back</span> Kembali
+      </button>
+      <button class="dropdown-item" onclick="showSendProofPage()">
+        <span class="material-symbols-outlined">upload</span> Kirim Bukti TF
+      </button>
+      <button class="dropdown-item" onclick="toggleTheme()">
+        <span class="material-symbols-outlined">brightness_6</span> Toggle Theme
+      </button>
+      <button class="dropdown-item" onclick="toggleMusicPlayer()">
+        <span class="material-symbols-outlined">music_note</span> Music Player
+      </button>
+    </div>
+  </div>
+
+  <!-- Music Player -->
+  <div class="music-player" id="musicPlayer">
+    <h3>Pilih Lagu</h3>
+    <ul class="song-list">
+      <li class="song-item" onclick="playMusic()">Play Music</li>
+      <li class="song-item" onclick="stopMusic()">Stop Music</li>
+    </ul>
+  </div>
+
+  <!-- Container -->
+  <div class="container">
+
+    <!-- Landing Page -->
+    <div class="landing-page" id="landingPage">
+      <div class="profile-icon">
+        <img src="https://files.catbox.moe/dsk4yc.jpg">
+      </div>
+      <h1>Web-Payment roar</h1>
+      <p class="description">Selamat datang di payment gateway saya.</p>
+      <button class="cta-button" onclick="showPaymentPage()">Lanjut ke Payment</button>
+    </div>
+
+    <!-- Payment Page -->
+    <div class="payment-page" id="paymentPage">
+      <div class="payment-header">
+        <h1>Metode Pembayaran</h1>
+      </div>
+
+      <div class="payment-grid">
+        <div class="payment-card">
+          <div class="payment-name">DANA</div>
+          <div class="payment-number">085177076149</div>
+          <button class="copy-btn" onclick="copyToClipboard('085177076149', this)">Salin</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Send Proof Page -->
+    <div class="send-proof-page" id="sendProofPage">
+      <h1>Kirim Bukti Transfer</h1>
+      <form id="proofForm" onsubmit="submitProof(event)">
+        <input type="text" id="nama" placeholder="Nama" required>
+        <input type="text" id="produk" placeholder="Produk" required>
+        <input type="number" id="harga" placeholder="Jumlah" required>
+        <input type="file" id="bukti" required>
+        <button type="submit">Kirim</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Audio -->
+  <audio id="backgroundMusic" loop></audio>
+
+  <!-- Particles -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
